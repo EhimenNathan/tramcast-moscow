@@ -1,0 +1,10 @@
+data/stream
+data/test_only
+data/*.log
+research
+loadtest
+submissions
+artifacts/bt_*.npz
+**/__pycache__
+.claude
+*.log

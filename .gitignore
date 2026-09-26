@@ -1,0 +1,19 @@
+# --- organiser data (not redistributed): recreate with `python ml/ingest.py --zip <path>/dataset.zip`
+data/labels/
+data/reference/
+data/hourly_boardings.parquet
+data/daily_supply.parquet
+data/hourly_supply.parquet
+data/test_only/
+data/ingest_report.json
+dataset.zip
+# --- runtime / scratch
+data/stream/
+*.log
+loadtest/tmp/
+loadtest/server*.log
+artifacts/bt_*.npz
+__pycache__/
+*.pyc
+.claude/
+.venv/

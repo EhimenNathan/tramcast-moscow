@@ -1,0 +1,5 @@
+-r requirements-api.txt
+pandas==2.2.3
+scipy==1.15.1
+statsmodels==0.14.4
+lightgbm==4.6.0

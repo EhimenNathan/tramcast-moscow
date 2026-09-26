@@ -1,0 +1,5 @@
+[
+{"target_rps": 100, "achieved_rps": 97.3, "p50_ms": 16.7, "p95_ms": 94.9, "p99_ms": 190.8, "errors": 0, "container_cpu_pct_of_2_vcpu": 31, "container_mem": "191.1MiB"},
+{"target_rps": 200, "achieved_rps": 198.2, "p50_ms": 8.3, "p95_ms": 23.8, "p99_ms": 38.2, "errors": 0, "container_cpu_pct_of_2_vcpu": 34, "container_mem": "196.4MiB"},
+{"target_rps": 300, "achieved_rps": 302.3, "p50_ms": 9.6, "p95_ms": 52.8, "p99_ms": 122.6, "errors": 0, "container_cpu_pct_of_2_vcpu": 49, "container_mem": "204MiB"},
+{"ingest_records": 100000, "seconds": 11.49, "records_per_s": 8705, "batch_size": 5000}]

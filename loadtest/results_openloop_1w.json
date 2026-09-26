@@ -1,0 +1,48 @@
+[
+ {
+  "target_rps": 100,
+  "achieved_rps": 97.2,
+  "p50_ms": 16.9,
+  "p95_ms": 137.2,
+  "p99_ms": 917.5,
+  "errors": 0,
+  "cpu_pct_of_2_cores": 13.3,
+  "rss_mb": 127.0
+ },
+ {
+  "target_rps": 150,
+  "achieved_rps": 148.2,
+  "p50_ms": 60.2,
+  "p95_ms": 751.5,
+  "p99_ms": 1032.4,
+  "errors": 0,
+  "cpu_pct_of_2_cores": 25.9,
+  "rss_mb": 137.7
+ },
+ {
+  "target_rps": 200,
+  "achieved_rps": 176.6,
+  "p50_ms": 1044.7,
+  "p95_ms": 8922.8,
+  "p99_ms": 10659.9,
+  "errors": 357,
+  "cpu_pct_of_2_cores": 33.5,
+  "rss_mb": 163.8
+ },
+ {
+  "target_rps": 250,
+  "achieved_rps": 249.6,
+  "p50_ms": 275.0,
+  "p95_ms": 4315.1,
+  "p99_ms": 9503.4,
+  "errors": 439,
+  "cpu_pct_of_2_cores": 22.8,
+  "rss_mb": 178.5
+ },
+ {
+  "ingest_records": 100000,
+  "seconds": 7.21,
+  "records_per_s": 13874,
+  "batch_size": 5000
+ }
+]

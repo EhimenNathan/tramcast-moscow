@@ -1,0 +1,190 @@
+[
+ {
+  "split": "stable winter (58 d)",
+  "fit_until": "2025-01-31",
+  "period": "2025-02-01..2025-03-30",
+  "direct": 0.9137,
+  "recursive": 0.8654,
+  "by_week": [
+   {
+    "week": 1,
+    "direct": 0.9318,
+    "recursive": 0.8808,
+    "direct_bias": 0.0108,
+    "recursive_bias": 0.0447
+   },
+   {
+    "week": 2,
+    "direct": 0.9222,
+    "recursive": 0.8628,
+    "direct_bias": -0.0235,
+    "recursive_bias": 0.0286
+   },
+   {
+    "week": 3,
+    "direct": 0.9103,
+    "recursive": 0.8561,
+    "direct_bias": -0.0104,
+    "recursive_bias": 0.05
+   },
+   {
+    "week": 4,
+    "direct": 0.9176,
+    "recursive": 0.8592,
+    "direct_bias": -0.0374,
+    "recursive_bias": 0.0273
+   },
+   {
+    "week": 5,
+    "direct": 0.9077,
+    "recursive": 0.8603,
+    "direct_bias": -0.0584,
+    "recursive_bias": 0.0118
+   },
+   {
+    "week": 6,
+    "direct": 0.9064,
+    "recursive": 0.8635,
+    "direct_bias": -0.0484,
+    "recursive_bias": 0.0228
+   },
+   {
+    "week": 7,
+    "direct": 0.9085,
+    "recursive": 0.869,
+    "direct_bias": -0.0632,
+    "recursive_bias": 0.0044
+   },
+   {
+    "week": 8,
+    "direct": 0.9131,
+    "recursive": 0.876,
+    "direct_bias": -0.0642,
+    "recursive_bias": 0.0064
+   },
+   {
+    "week": 9,
+    "direct": 0.8783,
+    "recursive": 0.8418,
+    "direct_bias": -0.0879,
+    "recursive_bias": 0.0556
+   }
+  ]
+ },
+ {
+  "split": "regime change: summer->autumn + route 7/50 weekend closure (61 d)",
+  "fit_until": "2025-08-31",
+  "period": "2025-09-01..2025-10-31",
+  "direct": 0.8245,
+  "recursive": 0.8248,
+  "by_week": [
+   {
+    "week": 1,
+    "direct": 0.854,
+    "recursive": 0.8473,
+    "direct_bias": -0.089,
+    "recursive_bias": -0.0789
+   },
+   {
+    "week": 2,
+    "direct": 0.8444,
+    "recursive": 0.8349,
+    "direct_bias": -0.0966,
+    "recursive_bias": -0.0794
+   },
+   {
+    "week": 3,
+    "direct": 0.8417,
+    "recursive": 0.8378,
+    "direct_bias": -0.0936,
+    "recursive_bias": -0.0749
+   },
+   {
+    "week": 4,
+    "direct": 0.8283,
+    "recursive": 0.829,
+    "direct_bias": -0.0788,
+    "recursive_bias": -0.0553
+   },
+   {
+    "week": 5,
+    "direct": 0.8158,
+    "recursive": 0.816,
+    "direct_bias": -0.1219,
+    "recursive_bias": -0.099
+   },
+   {
+    "week": 6,
+    "direct": 0.8118,
+    "recursive": 0.8164,
+    "direct_bias": -0.1209,
+    "recursive_bias": -0.0981
+   },
+   {
+    "week": 7,
+    "direct": 0.7958,
+    "recursive": 0.8049,
+    "direct_bias": -0.1418,
+    "recursive_bias": -0.1097
+   },
+   {
+    "week": 8,
+    "direct": 0.8088,
+    "recursive": 0.811,
+    "direct_bias": -0.1241,
+    "recursive_bias": -0.1034
+   },
+   {
+    "week": 9,
+    "direct": 0.822,
+    "recursive": 0.8281,
+    "direct_bias": -0.1453,
+    "recursive_bias": -0.118
+   }
+  ]
+ },
+ {
+  "split": "stable autumn (31 d)",
+  "fit_until": "2025-09-30",
+  "period": "2025-10-01..2025-10-31",
+  "direct": 0.9028,
+  "recursive": 0.8988,
+  "by_week": [
+   {
+    "week": 1,
+    "direct": 0.905,
+    "recursive": 0.9002,
+    "direct_bias": -0.0125,
+    "recursive_bias": -0.0141
+   },
+   {
+    "week": 2,
+    "direct": 0.9027,
+    "recursive": 0.8999,
+    "direct_bias": -0.0277,
+    "recursive_bias": -0.009
+   },
+   {
+    "week": 3,
+    "direct": 0.9027,
+    "recursive": 0.8991,
+    "direct_bias": -0.0231,
+    "recursive_bias": -0.0115
+   },
+   {
+    "week": 4,
+    "direct": 0.8996,
+    "recursive": 0.8936,
+    "direct_bias": -0.0194,
+    "recursive_bias": -0.0061
+   },
+   {
+    "week": 5,
+    "direct": 0.9054,
+    "recursive": 0.9033,
+    "direct_bias": -0.0041,
+    "recursive_bias": 0.0112
+   }
+  ]
+ }
+]

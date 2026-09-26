@@ -1,0 +1,46 @@
+[
+ {
+  "concurrency": 16,
+  "requests": 9600,
+  "rps": 479.3,
+  "p50_ms": 19.9,
+  "p95_ms": 101.5,
+  "p99_ms": 145.9,
+  "errors": 0,
+  "server_cpu_pct_total": 173.0,
+  "server_rss_mb": 283.8
+ },
+ {
+  "concurrency": 32,
+  "requests": 8614,
+  "rps": 429.2,
+  "p50_ms": 69.8,
+  "p95_ms": 133.6,
+  "p99_ms": 195.4,
+  "errors": 0,
+  "server_cpu_pct_total": 165.5,
+  "server_rss_mb": 286.7
+ },
+ {
+  "concurrency": 64,
+  "requests": 8453,
+  "rps": 420.3,
+  "p50_ms": 144.1,
+  "p95_ms": 230.4,
+  "p99_ms": 304.5,
+  "errors": 0,
+  "server_cpu_pct_total": 159.1,
+  "server_rss_mb": 290.9
+ },
+ {
+  "concurrency": 128,
+  "requests": 9012,
+  "rps": 446.9,
+  "p50_ms": 279.6,
+  "p95_ms": 372.0,
+  "p99_ms": 423.1,
+  "errors": 0,
+  "server_cpu_pct_total": 163.7,
+  "server_rss_mb": 294.5
+ }
+]

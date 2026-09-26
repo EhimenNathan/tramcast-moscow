@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Прогноз загрузки трамваев</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="/static/style.css?v=6">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="dot"></span>Прогноз пассажиропотока · трамвай · Москва</div>
+  <div class="meta" id="meta">загрузка…</div>
+</header>
+<main>
+  <section class="panel controls">
+    <label>Маршрут<select id="route"></select></label>
+    <label>Остановка<select id="stop"><option value="">— весь маршрут —</option></select></label>
+    <label>Участок (от остановки … до остановки)<span class="row"><select id="secA"><option value="">—</option></select><select id="secB"><option value="">—</option></select></span></label>
+    <label>Горизонт<select id="horizon"><option value="day">День (почасово)</option><option value="month" selected>Месяц</option><option value="year">Год (сценарий 2026)</option></select></label>
+    <label>С даты<input type="date" id="dfrom" value="2025-11-01"></label>
+    <label>По дату<input type="date" id="dto" value="2025-11-30"></label>
+    <label>Часы<span class="row"><input type="number" id="h1" min="0" max="23" value="0"><input type="number" id="h2" min="0" max="23" value="23"></span></label>
+    <label>Агрегация<select id="agg"><option value="hour">час</option><option value="day" selected>день</option><option value="month">месяц</option></select></label>
+    <fieldset>
+      <legend>Корректирующие коэффициенты</legend>
+      <label>Погода <b id="kw_v">1.00</b><input type="range" id="kw" min="0.5" max="1.5" step="0.01" value="1"></label>
+      <label>Событие <b id="ke_v">1.00</b><input type="range" id="ke" min="0.5" max="1.5" step="0.01" value="1"></label>
+      <label>Сезон <b id="ks_v">1.00</b><input type="range" id="ks" min="0.5" max="1.5" step="0.01" value="1"></label>
+      <label>Сценарий осадков, мм/сут <b id="pr_v">факт</b><input type="range" id="pr" min="-1" max="20" step="1" value="-1"></label>
+      <button id="reset" class="ghost">Сбросить</button>
+    </fieldset>
+    <div class="exports"><button id="csv">Экспорт CSV</button><button id="xlsx">Экспорт XLSX</button></div>
+  </section>
+  <section class="kpis" id="kpis"></section>
+  <section class="panel chart"><h3 id="ctitle">Динамика</h3><canvas id="ts"></canvas></section>
+  <section class="panel chart"><h3>Средний суточный профиль (выбранный период)</h3><canvas id="prof"></canvas></section>
+  <section class="panel map">
+    <h3>Карта: загрузка остановок по часам <span class="hint">(посадки по остановкам в выбранный час: маршрутный прогноз × априорная пространственная модель; геопривязка GTFS / OpenStreetMap, все маршруты)</span></h3>
+    <div class="maprow"><input type="range" id="hour" min="0" max="23" value="8"><b id="hour_v">08:00</b><button id="play">▶ Динамика</button></div>
+    <div id="map"></div>
+  </section>
+  <section class="panel ops">
+    <h3>Операционная панель: наполняемость и рекомендация по выпуску</h3>
+    <div class="row">
+      <label>Вместимость вагона, чел.<input type="number" id="cap" value="250"></label>
+      <label>Целевая наполняемость, %<input type="number" id="tgt" value="70"></label>
+      <label>Средняя длительность поездки, мин<input type="number" id="ride" value="18"></label>
+      <label>Коэф. макс. перегона × направления<input type="number" id="peak" value="3.0" step="0.1"></label>
+    </div>
+    <div id="opsTable"></div>
+  </section>
+  <p class="foot">Единица: посадки (успешные валидации). Серым — факт, цветом — прогноз. Источники внешних данных — в README.</p>
+</main>
+<div id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="/static/app.js?v=6"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+ "_doc": "Параметры модели level x shape x calendar x weather. Все значения обоснованы в README (раздел Валидация).",
+ "reference_end": "2025-10-31",
+ "weekday_window_days": 47,
+ "weekday_half_life": 10,
+ "weekend_window_days": 56,
+ "weekend_half_life": 14,
+ "shape_weeks": 4,
+ "shape_exclude_school_break": true,
+ "winter_shape_window": [
+  "2025-02-03",
+  "2025-03-28"
+ ],
+ "winter_shape_alpha_by_month": {
+  "11": 0.4,
+  "12": 0.5,
+  "1": 0.4,
+  "2": 0.4,
+  "3": 0.2
+ },
+ "weekday_factors_mon_thu": [
+  0.97,
+  1.004,
+  1.006,
+  1.014
+ ],
+ "friday_pooled": 0.99,
+ "friday_shrink": 0.5,
+ "month_factor_weekday": {
+  "11": 1.005,
+  "12": 1.0
+ },
+ "month_factor_weekend": {
+  "11": 0.98,
+  "12": 0.97
+ },
+ "school_break_factor": 0.985,
+ "hampel_k": 3.0,
+ "precip_beta": 0.004,
+ "precip_ref_mm": 1.0,
+ "closed_service_ratio": 0.1,
+ "restored_weekend_reference": [
+  "2025-02-01",
+  "2025-03-30"
+ ],
+ "working_saturday_shape_mix": 0.6,
+ "new_year_eve_late_evening_factor": 0.6,
+ "hybrid_recursive_weight": 0.2,
+ "level_pool_weight": 0.0,
+ "holiday_shape_sat_weight": 0.5,
+ "generic_holiday_factor": 0.93,
+ "level_method": "pf",
+ "pf_history_start": "2025-01-13"
+}

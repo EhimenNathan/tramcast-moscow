@@ -1,0 +1,31 @@
+# Full reproducible build: re-trains the model inside the container (needs ~1.5 GB for pandas/scipy/lightgbm).
+# docker build -f Dockerfile.train -t tramcast:train .
+# ---------- stage 1: reproducible model fit -> immutable artifacts ----------
+FROM python:3.12-slim AS trainer
+WORKDIR /app
+COPY requirements-api.txt requirements-ml.txt ./
+RUN pip install --no-cache-dir -r requirements-ml.txt
+COPY config ./config
+COPY ml ./ml
+COPY data/labels ./data/labels
+COPY data/reference ./data/reference
+COPY data/weather_daily.csv data/osm_tram_routes.json ./data/
+# output of ml/ingest.py (streamed from dataset.zip; reproduces the official labels 100 %); falls back to labels if absent
+COPY data/hourly_boardings.parquet* data/daily_supply.parquet* data/hourly_supply.parquet* ./data/
+# calibrated prediction intervals + out-of-time validation report (produced by ml/intervals.py, ml/backtest.py)
+COPY artifacts/intervals.json artifacts/validation.json ./artifacts/
+RUN python ml/train.py && ls -la artifacts
+
+# ---------- stage 2: slim, stateless API runtime ----------
+FROM python:3.12-slim
+ENV PYTHONUNBUFFERED=1 ARTIFACTS_DIR=/app/artifacts STREAM_DIR=/data/stream WEB_CONCURRENCY=2
+WORKDIR /app
+COPY requirements-api.txt ./
+RUN pip install --no-cache-dir -r requirements-api.txt && useradd -m app && mkdir -p /data/stream && chown app /data/stream
+COPY backend ./backend
+COPY --from=trainer /app/artifacts ./artifacts
+USER app
+EXPOSE 8000
+HEALTHCHECK --interval=15s --timeout=3s CMD python -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8000/health')"
+# one uvicorn worker per vCPU (WEB_CONCURRENCY); no shared in-process state -> safe to scale out
+CMD ["sh", "-c", "uvicorn backend.app.main:app --host 0.0.0.0 --port 8000 --workers ${WEB_CONCURRENCY} --no-access-log --loop uvloop --http httptools"]
